@@ -1,0 +1,41 @@
+
+    <!-- Navigation Bar -->
+   
+
+    <!-- Main Content -->
+    {% extends 'base.html' %}
+
+    {% block body %}
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Todo List ->{{ name }}</h1>
+        <table class="table table-hover mt-4">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Task</th>
+                    
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todos %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ todo.task }}</td>
+                     
+                    <td>{{ todo.created_at }}</td>
+                    <td>
+                        <a href="{% url 'update_todo' todo.id %}" class="btn btn-success btn-sm">Update</a>
+                        <a href="{% url 'delete_todo' todo.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{% url 'mark_complete' todo.id %}" class="btn btn-outline-success btn-sm">Mark Complete</a>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'add_todo' %}" class="btn btn-primary mb-3">Add Todo</a>
+    </div>
+    {% endblock %}
+    

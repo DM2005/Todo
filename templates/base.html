@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     
+</head>
+<body style="background:linear-gradient(to right, grey, rgb(51, 51, 110))">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+        <a class="navbar-brand" href="#">Todo App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <li class="nav-item">
+            <a class="btn btn-primary" href="{% url 'upload_profile' %}">Upload Profile</a>
+        </li>
+        
+    </nav>
+    {% block body %}
+    {% endblock %}
+
+    
+</body>
+</html>

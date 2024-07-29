@@ -1,0 +1,13 @@
+ 
+
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container text-center mt-5">
+    <br><br><br><br>
+    <h1>Welcome to the Todo App</h1>
+    <p class="lead">Manage your tasks efficiently</p>
+    <a href="{% url 'todo' %}" class="btn btn-primary btn-lg">Get Started</a>
+</div>
+
+{% endblock %}
